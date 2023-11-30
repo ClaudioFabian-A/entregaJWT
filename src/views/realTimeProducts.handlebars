@@ -1,0 +1,57 @@
+<div>
+  <div class= "formulario">
+    {{!-- action="./api/products" method="POST"  --}}
+    <form id="idForm" >
+      <h2 class="subtitle">Registro de productos</h2>
+      <label class="label" for="title">Nombre</label>
+      <input type="text" name="title" id="title" placeholder="Nombre" required />
+      <label for="description">Descripción</label>
+      <input type="text" name="description" id="description" placeholder="Descripción" required />
+      <label for="category">Categoría</label>
+      <input type="text" name="category" id="category" placeholder="Categoría" required />
+      <label for="code">Código</label>
+      <input type="text" name="code" id="code" placeholder="Código" required />
+      <label for="stock">Stock</label>
+      <input type="number " name="stock" id="stock" placeholder="0" required />
+      <label for="price">Precio $</label>
+      <input type="float" name="price" id="price" placeholder="00.00" required />
+      <label for="thumbnail">Imagen: url</label>
+      <input type="text" name="thumbnail" id="thumbnail" placeholder="https://imagen.jpg" />
+      <div>
+        <button class="btn btn-add" id="add-btn" type="submit" onclick="idFormEvent()">Registrar</button>
+      </div>
+    </form></div>
+
+    {{!-- <h2>Eliminar productos</h2> --}}
+
+{{!-- 
+
+    <input type="number" id="pid" placeholder="ID del Producto" />
+    <button id="buttonSubmitDelete" type="submit">Delete</button> --}}
+<h3>productos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Id Art</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price</th>
+          <th scope="col">Thumbnail</th>
+          <th scope="col">Code</th>
+          <th scope="col">stock</th>
+          <th scope="col">Status</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      
+      <tbody id="containerBody"></tbody>
+    </table>
+  </div>
+</div>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
+<script src="/js/counter.js"></script>

@@ -1,0 +1,20 @@
+<div class="itemCajustes">
+
+  {{#each products.payload }}
+     <div class="cardIt cardItAjust" id="{{this.id}}">
+            <h2>Articulo:{{this.title}}</h2>
+            <h2>Descripción: {{this.description}}</h2>
+            <h3>Precio: $ {{this.price}}</h3>
+            <h3>codico: {{this._id}}</h3>
+            <h3>Categoria: {{this.category}}</h3>
+            <img src={{this.thumbnail}}   />
+            <a href="#" class=" addButton" id={{this._id}} onclick="addToCart('{{this.id}}')">Añadir al
+            carrito</a>
+        </div>
+
+
+  {{/each}}
+
+</div>
+
+<script src="/js/products.js"></script>

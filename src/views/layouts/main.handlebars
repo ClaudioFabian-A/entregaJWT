@@ -1,0 +1,98 @@
+{{!-- <!DOCTYPE html> --}}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+<body>
+  <div class="container">
+    <nav class="header header1">
+      <div class="header1">
+        
+        <div class="boton2">
+          <div class="groupA ul">
+            <a class="button1 onclick ulli" aria-current="page" href="/">Home</a>
+            <a class="button1 onclick ulli" href="/realTimeProducts">RealTimeProducts</a>
+            <a class="button1 onclick ulli" href="/products">Products</a>
+            <a class="button1 onclick ulli" href="/chat">chat</a>
+            <a class="button1 onclick ulli" href="/profile">Profile</a>
+            <a class="button1 onclick ulli" href="/chat">chat</a>
+          </div>
+          <div>
+            
+            <a id="carrito">
+              
+              <button>
+                {{!-- <img src="https://www.goodfreephotos.com/albums/vector-images/shopping-cart-vector-clipart.png" class="imgCarrito" /> --}}
+                <i class="ul"></i>
+                <span id="cartbaner"
+                  class="numeroCarrito">0</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+<div class=" ajustes header">
+  <div class="article" role="group" >
+    <a href="?query=category:Chicken Giblets"><button type="button" class="navButton">Producto 1</button></a>
+    <a href="?query=category:Oil - Sesame"><button type="button" class="navButton">Producto 2</button></a>
+    <a href="?query=category:Beef Dry Aged Tenderloin Aaa"><button type="button" class="navButton">Producto 3</button></a>
+    <a href=""><button type="button" class="navButton">Profile</button></a>
+    <a href="?sort=asc"><button type="button" class="navButton">Ordenar ⬆️</button></a>
+    <a href="?sort=desc"><button type="button" class="navButton">Ordenar ⬇️</button></a>
+
+  </div>
+
+</div>
+  </div>
+    {{{body}}}
+    <div>
+    <nav aria-label="...">
+      <ul class="pagination ajustes">
+        {{#if product.hasPrevPage}}
+        <li class="page-item">
+          <a class="page-link" href={{product.prevLink}} tabindex="-1"
+            aria-disabled={{product.hasPrevPage}}>Previous</a>
+        </li>
+        {{else}}
+        <li class="page-item disabled">
+          <a class="page-link" href={{product.prevLink}} tabindex="-1"
+            aria-disabled={{product.hasPrevPage}}>Previous</a>
+        </li>
+        {{/if}}
+
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">Pagina
+            {{product.page}}/{{product.totalPages}}</span>
+        </li>
+
+        {{#if product.hasNextPage}}
+        <li class="page-item">
+          <a class="page-link" href={{product.nextLink}} aria-disabled={{product.hasNextPage}}>Next</a>
+        </li>
+        {{else}}
+        <li class="page-item disabled">
+          <a class="page-link" href={{product.nextLink}} aria-disabled={{product.hasNextPage}}>Next</a>
+        </li>
+        {{/if}}
+
+      </ul>
+    </nav></div>
+    
+   
+    {{!-- <script src="/js/profile.js"></script> --}}
+    <script src="/js/products.js"></script>
+
+
+</body>
+
+</html>
+
